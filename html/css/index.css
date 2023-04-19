@@ -1,4 +1,6 @@
 body{
+    width:auto;
+    height:auto;
     background-image: url("../image/img_background.png");
     background-color: rgb(51, 49, 61);
 }
