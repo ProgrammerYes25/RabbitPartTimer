@@ -1,0 +1,29 @@
+body{
+    height: 100%;
+    /* width: 100%; */
+    background-image: url("../image/img_background.png");
+    background-size: 100%;
+    background-color: rgb(51, 49, 61);
+}
+
+#img_logo {
+    height: 30%;
+    width: 30%;
+    margin: 8% auto auto auto;
+    display: block;
+
+}
+
+#game_btn{
+    height: 15%;
+    width: 15%;
+    margin: 5% auto auto 32%;
+    /* display: block; */
+}
+
+#rule_btn{
+    height: 15%;
+    width: 15%;;
+    margin: 3% auto auto 6%;
+    /* display: block; */
+}
