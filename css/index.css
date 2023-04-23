@@ -6,7 +6,7 @@ body{
     background-color: rgb(51, 49, 61);
 }
 
-#img_logo {
+.img_logo {
     height: 30%;
     width: 30%;
     margin: 8% auto auto auto;
@@ -14,16 +14,18 @@ body{
 
 }
 
-#game_btn{
+.game_btn{
     height: 15%;
     width: 15%;
     margin: 5% auto auto 32%;
+    position: relative;
     /* display: block; */
 }
 
-#rule_btn{
+.rule_btn{
     height: 15%;
     width: 15%;;
     margin: 3% auto auto 6%;
+    position: relative;
     /* display: block; */
 }

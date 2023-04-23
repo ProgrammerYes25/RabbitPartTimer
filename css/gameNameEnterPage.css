@@ -1,0 +1,14 @@
+body{
+    height: 100%;
+    /* width: 100%; */
+    background-image: url("../image/img_background.png");
+    background-size: 100%;
+    background-color: rgb(51, 49, 61);
+}
+
+.NameInput {
+    font-family: "../font/KoddiUDOnGothic-Bold.otf";
+    text-align:center;
+    margin-top: 30%;
+    display: block;
+}
