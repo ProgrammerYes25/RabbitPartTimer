@@ -39,7 +39,7 @@ body{
   .game_btn:hover {
     transform: scale(1.1);
   }
-/* --------------*/
+/* ------rule_btn 애니메이션--------*/
   .rule_btn {
     height: 15%;
     width: 15%;
