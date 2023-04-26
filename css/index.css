@@ -29,3 +29,25 @@ body{
     position: relative;
     /* display: block; */
 }
+
+  .game_btn {
+    height: 15%;
+    width: 15%;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .game_btn:hover {
+    transform: scale(1.1);
+  }
+/* --------------*/
+  .rule_btn {
+    height: 15%;
+    width: 15%;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .rule_btn:hover {
+    transform: scale(1.1);
+  }
+  
+  
