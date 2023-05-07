@@ -13,15 +13,16 @@ body{
     height: 30%;
     width: 30%;
     margin: 8% auto auto auto;
+    text-align: center;
     letter-spacing: 10px;
-    font-size: 50px
+    font-size: 70px
 }
 .manual{
     height: 30%;
     width: 60%;
     margin: 4% auto auto auto;
     text-align: center;
-    font-size: 20px
+    font-size: 40px
 } 
 
 img{

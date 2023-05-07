@@ -13,14 +13,15 @@ body{
     width: 30%;
     margin: 8% auto auto auto;
     letter-spacing: 10px;
-    font-size: 40px
+    text-align: center;
+    font-size: 70px
 }
 table{
     height: 30%;
     width: 60%;
     margin: 2% auto auto auto;
     text-align: center;
-    font-size: 30px
+    font-size: 40px
 }
 td{
     padding: 1% 1% 1% 1% ;
