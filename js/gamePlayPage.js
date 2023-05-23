@@ -16,7 +16,7 @@ async function init() {
     maxPredictions = model.getTotalClasses();
 
         // Convenience function to setup a webcam
-        const size = 200;
+        const size = 300; //카메라 크기 지정 변수
         const flip = true; // whether to flip the webcam
         webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
@@ -25,7 +25,7 @@ async function init() {
 
     // append/get elements to the DOM
     const canvas = document.getElementById("canvas");
-    canvas.width = size; canvas.height = size;
+    canvas.width = 500; canvas.height = 500;
     ctx = canvas.getContext("2d");
     labelContainer = document.getElementById("label-container");
     for (let i = 0; i < maxPredictions; i++) { // and class labels
@@ -58,7 +58,7 @@ async function predict() {
 
 function drawPose(pose) {
     if (webcam.canvas) {
-        ctx.drawImage(webcam.canvas, 0, 0);
+        ctx.drawImage(webcam.canvas, 100, 200);
         // draw the keypoints and skeleton
         if (pose) {
             const minPartConfidence = 0.5;
