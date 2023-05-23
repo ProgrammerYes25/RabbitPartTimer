@@ -25,7 +25,7 @@ async function init() {
 
     // append/get elements to the DOM
     const canvas = document.getElementById("canvas");
-    canvas.width = 500; canvas.height = 500;
+    canvas.width = size; canvas.height = size;
     ctx = canvas.getContext("2d");
     labelContainer = document.getElementById("label-container");
     for (let i = 0; i < maxPredictions; i++) { // and class labels
@@ -58,7 +58,7 @@ async function predict() {
 
 function drawPose(pose) {
     if (webcam.canvas) {
-        ctx.drawImage(webcam.canvas, 100, 200);
+        ctx.drawImage(webcam.canvas, 0, 0);
         // draw the keypoints and skeleton
         if (pose) {
             const minPartConfidence = 0.5;
