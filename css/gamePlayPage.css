@@ -1,5 +1,18 @@
+body {
+    height: 100%;
+    /* width: 100%; */
+    background-image: url("../image/img_game_background.png");
+    background-size: 100%;
+    background-color: rgb(51, 49, 61);
+}
+
 #canvas {
     position: absolute;
-    margin-left: 77%;
-    margin-top: 28%;
-  }
+    margin-left: 75%;
+    margin-top: 35%;
+}
+
+#image-container{
+    margin-left: 25%;
+    margin-top: 12%;
+}

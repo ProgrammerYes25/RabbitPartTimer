@@ -15,13 +15,13 @@ async function init() {
     model = await tmPose.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
 
-        // Convenience function to setup a webcam
-        const size = 300; //카메라 크기 지정 변수
-        const flip = true; // whether to flip the webcam
-        webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
-        await webcam.setup(); // request access to the webcam
-        await webcam.play();
-        window.requestAnimationFrame(loop);
+    // Convenience function to setup a webcam
+    const size = 600; //카메라 크기 지정 변수
+    const flip = true; // whether to flip the webcam
+    webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
+    await webcam.setup(); // request access to the webcam
+    await webcam.play();
+    window.requestAnimationFrame(loop);
 
     // append/get elements to the DOM
     const canvas = document.getElementById("canvas");
@@ -39,12 +39,43 @@ async function loop(timestamp) {
     window.requestAnimationFrame(loop);
 }
 
+
+var status = "sit"; //클래스
+var count = 0; // 점수
 async function predict() {
     // Prediction #1: run input through posenet
     // estimatePose can take in an image, video or canvas html element
     const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
     // Prediction 2: run input through teachable machine classification model
     const prediction = await model.predict(posenetOutput);
+
+
+    const imageContainer = document.getElementById("image-container");
+    let imageURL;
+
+    if (prediction[0].probability.toFixed(2) == 1) {
+        if (status == "sit") {
+            count++;
+        }
+        status = "stand";
+        imageURL = "../image/img_rabbit1.png";
+
+    } else if (prediction[1].probability.toFixed(2) == 1) {
+        status = "sit";
+        imageURL = "../image/img_rabbit2.png";
+    }
+
+   // 이미지 요소 생성 및 속성 설정
+   const imageElement = new Image();
+   imageElement.src = imageURL; 
+
+  // 이미지 로드 완료 후 이미지 컨테이너에 이미지 추가
+  imageElement.onload = function() {
+    imageContainer.innerHTML = ""; // 이미지 컨테이너 초기화
+    imageContainer.appendChild(imageElement);
+  };
+
+
 
     for (let i = 0; i < maxPredictions; i++) {
         const classPrediction =
@@ -55,6 +86,7 @@ async function predict() {
     // finally draw the poses
     drawPose(pose);
 }
+
 
 function drawPose(pose) {
     if (webcam.canvas) {
