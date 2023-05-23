@@ -59,12 +59,11 @@ async function predict() {
         }
         status = "stand";
         imageURL = "../image/img_rabbit1.png";
-
     } else if (prediction[1].probability.toFixed(2) == 1) {
         status = "sit";
         imageURL = "../image/img_rabbit2.png";
     }
-    console.log(count);
+    // console.log(count);
 
    // 이미지 요소 생성 및 속성 설정
    const imageElement = new Image();
