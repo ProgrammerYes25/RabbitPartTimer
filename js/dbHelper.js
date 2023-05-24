@@ -7,28 +7,4 @@ let conn = mysql.createConnection({
         user: 'RabbitPartTimer',
         password: 'rabbit2023@'
     })
-
-// conn.connect(function(err) {
-
-//     if (err) throw err;
-  
-//     console.log("Connected!");
-  
-//     con.query("drop database if exists mirimdb;", function (err, result) {
-  
-//       if (err) throw err;
-  
-//       console.log("drop Database ");
-  
-//     });
-
-//     con.query("create table todotbl(id int auto_increment primary key, contents varchar(20),yesno varchar(3));", function (err, result) {
-  
-//         if (err) throw err;
-    
-//         console.log("create Database ");
-    
-//       });
-  
-//   });
-
+console.log("Connected!");
