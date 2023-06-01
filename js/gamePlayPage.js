@@ -63,7 +63,7 @@ async function predict() {
         status = "sit";
         imageURL = "../image/img_rabbit2.png";
     }
-    // console.log(count);
+    console.log(count);
 
    // 이미지 요소 생성 및 속성 설정
    const imageElement = new Image();
@@ -76,16 +76,34 @@ async function predict() {
   };
 
 
-
-    for (let i = 0; i < maxPredictions; i++) {
-        const classPrediction =
-            prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-        labelContainer.childNodes[i].innerHTML = classPrediction;
-    }
+    //stand sit 분석 수치 나타내는 코드
+    // for (let i = 0; i < maxPredictions; i++) {
+    //     const classPrediction =
+    //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+    //     labelContainer.childNodes[i].innerHTML = classPrediction;
+    // }
 
     // finally draw the poses
     drawPose(pose);
 }
+
+var time = 30; //기준시간 작성
+	var sec = ""; //초
+
+	//setInterval(함수, 시간) : 주기적인 실행
+	var x = setInterval(function() {
+		//parseInt() : 정수를 반환
+		sec = time%60; //나머지를 계산
+
+		document.getElementById("timer").innerHTML = sec + "초";
+		time--;
+
+		//타임아웃 시
+		if (time < 0) {
+			clearInterval(x); //setInterval() 실행을 끝냄
+			document.getElementById("timer").innerHTML = "0초";
+		}
+	}, 1000);
 
 
 function drawPose(pose) {

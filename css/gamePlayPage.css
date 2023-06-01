@@ -21,3 +21,14 @@ body {
     font-size: large;
     font-style: normal;
 }
+
+#timer{
+    margin-top: 14.5%;
+    margin-left: 9.5%;
+    color: white;
+    font-size: 35px;
+}
+
+#image-container{
+    margin-top: -5%;
+}
