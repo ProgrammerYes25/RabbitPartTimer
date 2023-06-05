@@ -8,13 +8,13 @@ var express = require('express')
 var static = require('serve-static');
 
 
-const conn = mysql.createConnection({
-    host: '127.0.0.1',
-    port: '3306',
-    user: 'RabbitPartTimer',
-    password: 'rabbit2023@',
-    database : 'partTimerDB'
-});
+// const conn = mysql.createConnection({
+//     host: '127.0.0.1',
+//     port: '3306',
+//     user: 'RabbitPartTimer',
+//     password: 'rabbit2023@',
+//     database : 'partTimerDB'
+// });
 
 let app =express();
 
@@ -40,13 +40,13 @@ app.get('/gameManualPage', (req, res)=>{
 
 app.post('/gamePlayPage', (req, res)=>{
     console.log('/ 시작됨');
-    userName = req.body.nameInput;
-    console.log('userName :'+userName);
-    conn.query(`INSERT INTO scoreTable(userName, userScore) VALUES (?, null)`,[userName], function(err, result){
-        if(err) console.log(err);
-        console.log("userName inserted");
-        // table scoreTable 생성
-    });
+    // userName = req.body.nameInput;
+    // console.log('userName :'+userName);
+    // conn.query(`INSERT INTO scoreTable(userName, userScore) VALUES (?, null)`,[userName], function(err, result){
+    //     if(err) console.log(err);
+    //     console.log("userName inserted");
+    //     // table scoreTable 생성
+    // });
     //conn.end();
     res.render('gamePlayPage');
 
