@@ -9,7 +9,7 @@ body {
 #canvas {
     position: absolute;
     margin-left: 75%;
-    margin-top: 35%;
+    margin-top: 19%;
 }
 
 #image-container{
@@ -23,7 +23,7 @@ body {
 }
 
 #timer{
-    margin-top: 14.5%;
+    margin-top: 17.5%;
     margin-left: 9.5%;
     color: white;
     font-size: 35px;
