@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css"  href="/css/gamePlayPage.css">
+    <script type="text/javascript" src="/gamePlayPage.js"></script>
+    <title>알바토끼</title>
+</head>
+
+<body>
+
+    <!-- <button type="button" onclick="init()">Start</button> -->
+    <div><canvas id="canvas"></canvas></div>
+    <div id="label-container"></div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+
+    <script>
+        init();
+    </script>
+
+    <div id="timer"></div>
+    
+    <div id="image-container"></div>
+
+    <div id = game-cnt>
+        <script type="text/javascript"  src="/gamePlayPage.js">
+
+        </script>
+    </div>
+
+
+    
+</body>
+
+<!-- npx http-server 터미널에서 실행-->
+<!-- http://127.0.0.1:8080 접속-->
