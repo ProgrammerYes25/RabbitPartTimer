@@ -61,6 +61,11 @@ app.post('/gamePlayPage', (req, res)=>{
     //res.sendFile('./html/gamePlayPage.html');
 });
 
+app.get('/gameTimeoutPage', (req, res)=>{
+    console.log('/ gameTimeoutPage');
+    res.render('gameTimeoutPage')
+});
+
 
 app.listen(3000, ()=>{
     console.log("3000 로컬 서버 시작 ");
