@@ -51,17 +51,19 @@ async function predict() {
 
 
     const imageContainer = document.getElementById("image-container");
+    const textContainer = document.getElementById("text-container");
     let imageURL;
 
     if (prediction[0].probability.toFixed(2) == 1) {
         if (status == "sit") {
             count++;
+            textContainer.innerHTML=count+"점";
         }
         status = "stand";
-        imageURL = "../image/img_rabbit1.png";
-    } else if (prediction[1].probability.toFixed(2) == 1) {
+        imageURL = "./image/img_rabbit1.png";
+    } else if (prediction[1].probability.toFixed(2) == 1) { 
         status = "sit";
-        imageURL = "../image/img_rabbit2.png";
+        imageURL = "./image/img_rabbit2.png";
     }
     console.log(count);
 
@@ -69,12 +71,14 @@ async function predict() {
    const imageElement = new Image();
    imageElement.src = imageURL; 
 
+   const textElement = new Text();
+
+
   // 이미지 로드 완료 후 이미지 컨테이너에 이미지 추가
   imageElement.onload = function() {
     imageContainer.innerHTML = ""; // 이미지 컨테이너 초기화
     imageContainer.appendChild(imageElement);
   };
-
 
     //stand sit 분석 수치 나타내는 코드
     // for (let i = 0; i < maxPredictions; i++) {
@@ -83,28 +87,29 @@ async function predict() {
     //     labelContainer.childNodes[i].innerHTML = classPrediction;
     // }
 
+    
     // finally draw the poses
     drawPose(pose);
 }
 
 var time = 30; //기준시간 작성
-	var sec = ""; //초
+   var sec = ""; //초
 
-	//setInterval(함수, 시간) : 주기적인 실행
-	var x = setInterval(function() {
-		//parseInt() : 정수를 반환
-		sec = time%60; //나머지를 계산
+   //setInterval(함수, 시간) : 주기적인 실행
+   var x = setInterval(function() {
+      //parseInt() : 정수를 반환
+      sec = time%60; //나머지를 계산
 
-		document.getElementById("timer").innerHTML = sec + "초";
-		time--;
+      document.getElementById("timer").innerHTML = sec + "초";
+      time--;
 
-		//타임아웃 시
-		if (time < 0) {
-			clearInterval(x); //setInterval() 실행을 끝냄
-			document.getElementById("timer").innerHTML = "0초";
+      //타임아웃 시
+      if (time < 0) {
+         clearInterval(x); //setInterval() 실행을 끝냄
+         document.getElementById("timer").innerHTML = "0초";
             location.href = "/gameTimeoutPage";
-		}
-	}, 1000);
+      }
+   }, 1000);
 
 
 function drawPose(pose) {
