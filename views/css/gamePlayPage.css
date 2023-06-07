@@ -12,6 +12,11 @@ body {
     margin-top: 19%;
 }
 
+#basket-image{
+    height: 100px;
+    width: 100px;
+}
+
 #image-container{
     margin-left: 25%;
     margin-top: 10%;
