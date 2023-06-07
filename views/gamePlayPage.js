@@ -49,7 +49,7 @@ async function predict() {
     // Prediction 2: run input through teachable machine classification model
     const prediction = await model.predict(posenetOutput);
 
-    const basketimageContainer = document.getElementById("basket-image");
+    const basketimageContainer = document.getElementById("basket-image");    
     const imageContainer = document.getElementById("image-container");
     const textContainer = document.getElementById("text-container");
     let basketimageURL;
@@ -129,7 +129,7 @@ var time = 30; //기준시간 작성
       if (time < 0) {
          clearInterval(x); //setInterval() 실행을 끝냄
          document.getElementById("timer").innerHTML = "0초";
-            location.href = "/gameTimeoutPage";
+            // location.href = "/gameTimeoutPage";
       }
    }, 1000);
 
