@@ -98,8 +98,8 @@ async function predict() {
   };
 
   basketimageElement.onload = function() {
-    imageContainer.innerHTML = ""; // 이미지 컨테이너 초기화
-    imageContainer.appendChild(basketimageElement);
+    basketimageContainer.innerHTML = ""; // 이미지 컨테이너 초기화
+    basketimageContainer.appendChild(basketimageElement);
   };
 
     //stand sit 분석 수치 나타내는 코드
