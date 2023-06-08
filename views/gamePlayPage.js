@@ -42,6 +42,7 @@ async function loop(timestamp) {
 
 var status = "stand"; //클래스
 var count = 0; // 점수
+const scoreMusic = new Audio("./music/score.mp3");
 async function predict() {
     // Prediction #1: run input through posenet
     // estimatePose can take in an image, video or canvas html element
@@ -59,6 +60,7 @@ async function predict() {
         if (status == "sit") {
             count++;//YS- 앉았을 때 점수 추가 
             countTextContainer.innerHTML=count+"점";    //YS- 점수 바꿔서 띄우기 (innerHTML은 텍스트를 넣거나 들어가 있는 텍스트를 바꿀을 수 있다.)
+            scoreMusic.play();
         }
         status = "stand";
         imageURL = "./image/img_rabbit1.png";
