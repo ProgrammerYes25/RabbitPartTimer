@@ -51,14 +51,14 @@ async function predict() {
 
     const basketimageContainer = document.getElementById("basket-image");    
     const imageContainer = document.getElementById("image-container");
-    const textContainer = document.getElementById("text-container");
+    const countTextContainer = document.getElementById("count-text-container");     // YS- ejs에 있는 id가 'count-text-container'인 <h1>태그와 연결 (점수가 들어갈 <h1>태그이다.)
     let basketimageURL;
     let imageURL;
 
     if (prediction[0].probability.toFixed(2) == 1) {
         if (status == "sit") {
-            count++;
-            textContainer.innerHTML=count+"점";
+            count++;//YS- 앉았을 때 점수 추가 
+            countTextContainer.innerHTML=count+"점";    //YS- 점수 바꿔서 띄우기 (innerHTML은 텍스트를 넣거나 들어가 있는 텍스트를 바꿀을 수 있다.)
         }
         status = "stand";
         imageURL = "./image/img_rabbit1.png";
