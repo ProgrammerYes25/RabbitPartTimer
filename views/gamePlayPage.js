@@ -49,9 +49,10 @@ async function predict() {
     // Prediction 2: run input through teachable machine classification model
     const prediction = await model.predict(posenetOutput);
 
-
+    const basketimageContainer = document.getElementById("basket-image");    
     const imageContainer = document.getElementById("image-container");
     const textContainer = document.getElementById("text-container");
+    let basketimageURL;
     let imageURL;
 
     if (prediction[0].probability.toFixed(2) == 1) {
@@ -67,17 +68,38 @@ async function predict() {
     }
     console.log(count);
 
+    if(count < 5){
+        basketimageURL = "./image/img_basket.png";
+    } else if(count >= 5 && count < 10){
+        basketimageURL = "./image/img_basket2.png";
+    } else if(count >= 10 && count < 15){
+        basketimageURL = "./image/img_basket3.png";
+    } else if(count >= 15 && count < 20){
+        basketimageURL = "./image/img_basket4.png";
+    } else if(count >= 20 && count < 25){
+        basketimageURL = "./image/img_basket5.png";
+    } else if(count >= 25){
+        basketimageURL = "./image/img_basket6.png";
+    }
+
    // 이미지 요소 생성 및 속성 설정
    const imageElement = new Image();
-   imageElement.src = imageURL; 
+   imageElement.src = imageURL;
+
+   const basketimageElement = new Image();
+   basketimageElement.src = basketimageURL; 
 
    const textElement = new Text();
-
 
   // 이미지 로드 완료 후 이미지 컨테이너에 이미지 추가
   imageElement.onload = function() {
     imageContainer.innerHTML = ""; // 이미지 컨테이너 초기화
     imageContainer.appendChild(imageElement);
+  };
+
+  basketimageElement.onload = function() {
+    imageContainer.innerHTML = ""; // 이미지 컨테이너 초기화
+    imageContainer.appendChild(basketimageElement);
   };
 
     //stand sit 분석 수치 나타내는 코드
@@ -107,7 +129,7 @@ var time = 30; //기준시간 작성
       if (time < 0) {
          clearInterval(x); //setInterval() 실행을 끝냄
          document.getElementById("timer").innerHTML = "0초";
-            location.href = "/gameTimeoutPage";
+            // location.href = "/gameTimeoutPage";
       }
    }, 1000);
 

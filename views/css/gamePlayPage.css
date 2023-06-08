@@ -12,6 +12,11 @@ body {
     margin-top: 19%;
 }
 
+#basket-image{
+    margin-left: -100px;
+    margin-top: 350px;
+}
+
 #image-container{
     margin-left: 25%;
     margin-top: 10%;
@@ -31,4 +36,8 @@ body {
 
 #image-container{
     margin-top: -5%;
+}
+
+#chear-up{
+    margin-top: 10;
 }
