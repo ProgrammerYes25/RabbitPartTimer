@@ -65,7 +65,10 @@ app.get('/gameTimeoutPage', (req, res)=>{
     console.log('/ gameTimeoutPage');
     res.render('gameTimeoutPage')
 });
-
+app.get('/gameManualPage', (req, res)=>{
+    console.log('gameManualPage');
+    res.render('gameManualPage');
+})
 
 app.listen(3000, ()=>{
     console.log("3000 로컬 서버 시작 ");
