@@ -50,3 +50,25 @@ body{
     margin-top: 2%;
     margin-left: 20%;
 }
+
+/* ---버튼 애니메이션 ---*/
+
+.game_btn {
+    height: 15%;
+    width: 15%;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .game_btn:hover {
+    transform: scale(1.1);
+  }
+
+  .back_btn {
+    height: 21%;
+    width: 21%;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .back_btn:hover {
+    transform: scale(1.1);
+  }
