@@ -56,7 +56,23 @@ async function predict() {
     const randomText = document.getElementById("random-text"); //G : ejs에 있는 id와 연결?
     let basketimageURL;
     let imageURL;
-    var RanText = new Array("테스트1", "테스트2", "테스트3"); //랜덤으로 띄울 텍스트
+    //var RanText = new Array("테스트1", "테스트2", "테스트3"); //랜덤으로 띄울 텍스트
+    function readText(file) {
+        // Check if the file is an image.
+        if (file.type && !file.type.startsWith('image/')) {
+          console.log('File is not an image.', file.txt, file);
+          return;
+        }
+      
+        const reader = new FileReader();
+        reader.addEventListener('load', (event) => {
+          img.src = event.target.result;
+        });
+        reader.readAsDataURL(file);
+      }
+
+      var RText = readText("ran").split(';');
+
 
 
 
