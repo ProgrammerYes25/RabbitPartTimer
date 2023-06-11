@@ -39,6 +39,7 @@ app.get('/gameManualPage', (req, res)=>{
 });
 
 app.post('/gamePlayPage', (req, res)=>{
+    
     console.log('/ 시작됨');
     // userName = req.body.nameInput;
     // console.log('userName :'+userName);
