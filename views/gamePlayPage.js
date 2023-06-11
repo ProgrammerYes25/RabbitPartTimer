@@ -56,7 +56,7 @@ async function predict() {
     const randomText = document.getElementById("random-text"); //G : ejs에 있는 id와 연결?
     let basketimageURL;
     let imageURL;
-    var RanText = new Array("테스트1", "테스트2", "테스트3");
+    var RanText = new Array("테스트1", "테스트2", "테스트3"); //랜덤으로 띄울 텍스트
 
 
 
