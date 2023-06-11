@@ -56,22 +56,16 @@ async function predict() {
     const randomText = document.getElementById("random-text"); //G : ejs에 있는 id와 연결?
     let basketimageURL;
     let imageURL;
-    //var RanText = new Array("테스트1", "테스트2", "테스트3"); //랜덤으로 띄울 텍스트
-    function readText(file) {
-        // Check if the file is an image.
-        if (file.type && !file.type.startsWith('image/')) {
-          console.log('File is not an image.', file.txt, file);
-          return;
-        }
-      
-        const reader = new FileReader();
-        reader.addEventListener('load', (event) => {
-          text.src = event.target.result;
-        });
-        reader.readAsDataURL(file);
-      }
 
-      var RText = readText("ran").split(';');
+     var RanText = new Array("노동력이! 힘이다! 잠은! 죽어서 자자!",
+                            "알바생님 조금만 더!! 조금만 더!!",
+                            "궁극의 알바생! 힘내라 알바생!",
+                            "좀 더 빨리 빨리 빨리",
+                            "시간이 부족하다!!!!!!!!!!",
+                            "열심히!!!!! 열심히!!!!!!",
+                            "허이챠 허이챠 허이챠 욥욥욥욥욥",
+                            "달에 지진나도록 뛰어!!!!!!!!!!!!",
+                            "달떡이 맛있어지는 소리가 들립니다!!!!!!!"); //랜덤으로 띄울 텍스트
 
 
 
@@ -80,7 +74,7 @@ async function predict() {
         if (status == "sit") {
             count++;//YS- 앉았을 때 점수 추가 
             countTextContainer.innerHTML=count+"점";    //YS- 점수 바꿔서 띄우기 (innerHTML은 텍스트를 넣거나 들어가 있는 텍스트를 바꿀을 수 있다.)
-            randomText.innerHTML=RanText[Math.floor(Math.random() * 3)]; //점수가 바뀔때마다 텍스트를 랜덤으로 하나씩 넣기
+            randomText.innerHTML=RanText[Math.floor(Math.random() * 9)]; //점수가 바뀔때마다 텍스트를 랜덤으로 하나씩 넣기
             scoreMusic.play();
         }
         status = "stand";

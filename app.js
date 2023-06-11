@@ -6,7 +6,7 @@ var express = require('express')
 
 // Express의 미들웨어 불러오기
 var static = require('serve-static');
-
+var player = require('play-sound')(opts = {})
 
 // const conn = mysql.createConnection({
 //     host: '127.0.0.1',
@@ -17,6 +17,7 @@ var static = require('serve-static');
 // });
 
 let app =express();
+// const audio = new Audio('./music/button_click.mp3');
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.static('views'));
@@ -40,6 +41,13 @@ app.get('/gameManualPage', (req, res)=>{
 
 app.post('/gamePlayPage', (req, res)=>{
     console.log('/ 시작됨');
+    // audio.autoplay = true;
+    // audio.autoplay = true;
+    // clickMusic.play();
+    player.play('button_click.mp3', function(err){
+        if (err) throw err
+      })
+    
     // userName = req.body.nameInput;
     // console.log('userName :'+userName);
     // conn.query(`INSERT INTO scoreTable(userName, userScore) VALUES (?, null)`,[userName], function(err, result){
