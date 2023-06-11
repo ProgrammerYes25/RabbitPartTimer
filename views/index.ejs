@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet"  type="text/css"  href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <!-- <script src="../js/index.js"></script> -->
     <title>알바토끼</title>
+    <script>
+        function onclickSound(link) {
+            const clickMusic = document.getElementById("clickSound");
+            clickMusic.play();
+
+            // 소리 재생 후 링크로 이동
+            setTimeout(function () {
+                window.location.href = link;
+            }, clickMusic.duration * 670); // 소리의 재생 시간(초)에 따라 지연 시간 설정
+        }
+    </script>
 </head>
+
+    <img class="game_btn" src="image/img_btn_game_start.png" alt="game_btn"
+        onclick="onclickSound('/gameNameEnterPage')" />
+
+    <img class="rule_btn" src="image/img_btn_game_rules.png" alt="rule_btn"
+        onclick="onclickSound('/gameManualPage')" />
+
+    <audio id="clickSound">
+        <source src="./music/button_click.mp3" type="audio/mp3">
+    </audio>
+
+</body>
+
+</html>
 
 <body>
 
     <img class="img_logo" src="image/img_logo.png" alt="img_logo">
-
-    <a href="/gameNameEnterPage">
-        <img class="game_btn" src="image/img_btn_game_start.png" alt="game_btn"/>
-    </a>
-    <a href="/gameManualPage">
-        <img class="rule_btn" src="image/img_btn_game_rules.png" alt="rule_btn"/>
-    </a>
-
-
-</body>
-
-</html> 

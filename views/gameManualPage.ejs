@@ -7,6 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/css/game_manual_style.css">
         <title>알바토끼</title>
+        <script>
+            function onclickSound(link) {
+                const clickMusic = document.getElementById("clickSound");
+                clickMusic.play();
+    
+                // 소리 재생 후 링크로 이동
+                setTimeout(function () {
+                    window.location.href = link;
+                }, clickMusic.duration * 670); // 소리의 재생 시간(초)에 따라 지연 시간 설정
+            }
+        </script>
     </head>
     <body>
         <p class="title">게임 방법</p>
@@ -22,10 +33,15 @@
         <img id="rabit-gif" src="/image/working_rabbit.gif" alt="rabit-gif">
         
         <div id="btn">
-            <a href="/"><img src="/image/img_btn_game_return.png" alt="돌아가기 버튼" id="return" class="click_btn"></a>
-            <a href="/gameNameEnterPage"><img src="/image/img_btn_game_start.png" alt="시작하기 버튼" id="start" class="click_btn"></a>
+            <img src="/image/img_btn_game_return.png" alt="돌아가기 버튼" id="return" class="click_btn"
+            onclick="onclickSound('/')" >
+            <img src="/image/img_btn_game_start.png" alt="시작하기 버튼" id="start" class="click_btn"
+                onclick="onclickSound('/gameNameEnterPage')" >
         </div>
 
-        
+        <audio id="clickSound">
+            <source src="./music/button_click.mp3" type="audio/mp3">
+        </audio>
+
     </body>
 </html>

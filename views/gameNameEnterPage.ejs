@@ -5,6 +5,17 @@
     <link rel="stylesheet"  type="text/css"  href="/css/gameNameEnterPage.css">
     <!-- <script src="../js/gameNameEnterPage.js"></script> -->
     <title>알바토끼</title>
+    <script>
+        function onclickSound(link) {
+            const clickMusic = document.getElementById("clickSound");
+            clickMusic.play();
+
+            // 소리 재생 후 링크로 이동
+            setTimeout(function () {
+                window.location.href = link;
+            }, clickMusic.duration * 670); // 소리의 재생 시간(초)에 따라 지연 시간 설정
+        }
+    </script>
 </head>
 
 <body>  
@@ -19,9 +30,12 @@
     <!-- <p class = "name">이름을 입력해주세요</p> -->
     
     <!-- 뒤로가기버튼 -->
-    <a href="/">
-        <img class="back_btn" src="/image/img_btn_game_return.png" alt="back_btn">
-    </a>
+        <img class="back_btn" src="/image/img_btn_game_return.png" alt="back_btn"
+        onclick="onclickSound('/')" >
+
+        <audio id="clickSound">
+            <source src="./music/button_click.mp3" type="audio/mp3">
+        </audio>
 
 </body>
 
