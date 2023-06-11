@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet"  type="text/css"  href="/css/gameNameEnterPage.css">
+    <link rel="stylesheet" type="text/css" href="/css/gameNameEnterPage.css">
     <!-- <script src="../js/gameNameEnterPage.js"></script> -->
     <title>알바토끼</title>
     <script>
@@ -15,27 +15,37 @@
                 window.location.href = link;
             }, clickMusic.duration * 670); // 소리의 재생 시간(초)에 따라 지연 시간 설정
         }
+
+        function submitClickSound() {
+            var clickMusic = document.getElementById("clickSound");
+            clickMusic.play();
+
+            // 소리 재생 후 페이지 이동
+            setTimeout(function () {
+                var form = document.querySelector("form");
+                form.submit();
+            }, clickMusic.duration * 5000); // 소리의 재생 시간(초)에 따라 지연 시간 설정
+        }
     </script>
 </head>
 
-<body>  
+<body>
     <form method="post" action="/gamePlayPage">
         <div class="Input">
             <input type="text" maxlength="7" id="NameInput" name="nameInput" placeholder="이름 입력">
         </div>
         <!-- 이름 입력 버튼 (임시) -->
         <!-- <img class="game_btn" src="/image/img_btn_game_start.png" alt="game_btn"> -->
-        <input class="game_btn" type="submit" value="" name="" src="/image/start_btn.png" alt="game_btn" id="submitBtn">
+        <input class="game_btn" type="submit" value="" name="" src="/image/start_btn.png" alt="game_btn" id="submitBtn" onclick="submitClickSound()">
     </form>
     <!-- <p class = "name">이름을 입력해주세요</p> -->
-    
-    <!-- 뒤로가기버튼 -->
-        <img class="back_btn" src="/image/img_btn_game_return.png" alt="back_btn"
-        onclick="onclickSound('/')" >
 
-        <audio id="clickSound">
-            <source src="./music/button_click.mp3" type="audio/mp3">
-        </audio>
+    <!-- 뒤로가기버튼 -->
+    <img class="back_btn" src="/image/img_btn_game_return.png" alt="back_btn" onclick="onclickSound('/')">
+
+    <audio id="clickSound">
+        <source src="./music/button_click.mp3" type="audio/mp3">
+    </audio>
 
 </body>
 
