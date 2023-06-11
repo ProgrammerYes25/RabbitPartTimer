@@ -52,14 +52,19 @@ async function predict() {
 
     const basketimageContainer = document.getElementById("basket-image");    
     const imageContainer = document.getElementById("image-container");
-    const countTextContainer = document.getElementById("count-text-container");     // YS- ejs에 있는 id가 'count-text-container'인 <h1>태그와 연결 (점수가 들어갈 <h1>태그이다.)
+    const countTextContainer = document.getElementById("count-text-container"); // YS- ejs에 있는 id가 'count-text-container'인 <h1>태그와 연결 (점수가 들어갈 <h1>태그이다.)
+    const randomText = document.getElementById("random-text"); //G : ejs에 있는 id와 연결?
     let basketimageURL;
     let imageURL;
+    var RanText = new Array("테스트1", "테스트2", "테스트3");
+
+
 
     if (prediction[0].probability.toFixed(2) == 1) {
         if (status == "sit") {
             count++;//YS- 앉았을 때 점수 추가 
             countTextContainer.innerHTML=count+"점";    //YS- 점수 바꿔서 띄우기 (innerHTML은 텍스트를 넣거나 들어가 있는 텍스트를 바꿀을 수 있다.)
+            randomText.innerHTML=RanText[Math.floor(Math.random() * 3)]; //점수가 바뀔때마다 텍스트를 랜덤으로 하나씩 넣기
             scoreMusic.play();
         }
         status = "stand";
