@@ -66,7 +66,7 @@ async function predict() {
       
         const reader = new FileReader();
         reader.addEventListener('load', (event) => {
-          img.src = event.target.result;
+          text.src = event.target.result;
         });
         reader.readAsDataURL(file);
       }
@@ -80,7 +80,7 @@ async function predict() {
         if (status == "sit") {
             count++;//YS- 앉았을 때 점수 추가 
             countTextContainer.innerHTML=count+"점";    //YS- 점수 바꿔서 띄우기 (innerHTML은 텍스트를 넣거나 들어가 있는 텍스트를 바꿀을 수 있다.)
-            randomText.innerHTML=RanText[Math.floor(Math.random() * 6)]; //점수가 바뀔때마다 텍스트를 랜덤으로 하나씩 넣기
+            randomText.innerHTML=RanText[Math.floor(Math.random() * 3)]; //점수가 바뀔때마다 텍스트를 랜덤으로 하나씩 넣기
             scoreMusic.play();
         }
         status = "stand";
