@@ -10,5 +10,16 @@
 <body>
     gameTimeoutPage
     <p id="text-container">점수 출력 문구</p>
+
+    <img class="game_btn" src="image/img_btn_game_start.png" alt="game_btn"
+        onclick="onclickSound('/gameNameEnterPage')" />
+
+    <img class="rule_btn" src="image/img_btn_game_rules.png" alt="rule_btn"
+        onclick="onclickSound('/gameManualPage')" />
+
+    <audio id="clickSound">
+        <source src="./music/button_click.mp3" type="audio/mp3">
+    </audio>
+
 </body>
 </html>
