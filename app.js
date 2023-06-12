@@ -6,7 +6,7 @@ var express = require('express')
 
 // Express의 미들웨어 불러오기
 var static = require('serve-static');
-var player = require('play-sound')(opts = {})
+//var player = require('play-sound')(opts = {})
 
 // const conn = mysql.createConnection({
 //     host: '127.0.0.1',
@@ -45,9 +45,9 @@ app.post('/gamePlayPage', (req, res)=>{
     // audio.autoplay = true;
     // audio.autoplay = true;
     // clickMusic.play();
-    player.play('button_click.mp3', function(err){
-        if (err) throw err
-      })
+    // player.play('button_click.mp3', function(err){
+    //     if (err) throw err
+    //   })
     
     // userName = req.body.nameInput;
     // console.log('userName :'+userName);
