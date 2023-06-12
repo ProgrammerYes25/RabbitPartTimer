@@ -50,12 +50,6 @@ app.post('/gamePlayPage', (req, res)=>{
     //   })
     
     userName = req.body.nameInput;
-    console.log('userName :'+userName);
-    conn.query(`INSERT INTO scoreTable(userName, userScore) VALUES (?, null)`,[userName], function(err, result){
-        if(err) console.log(err);
-        console.log("userName inserted");
-        // table scoreTable 생성
-    });
     // conn.end();
     res.render('gamePlayPage');
 
@@ -73,13 +67,15 @@ app.post('/gamePlayPage', (req, res)=>{
 app.get('/gameTimeoutPage', (req, res)=>{
     console.log('/ gameTimeoutPage'+req.query.count+""+userName);
     let score = req.query.count;
-    conn.query("UPDATE scoreTable SET userScore=? WHERE userName=?",[score, userName], function(err, result){
+    
+    console.log('userName :'+userName);
+    conn.query(`INSERT INTO scoreTable(userName, userScore) VALUES (?, ?)`,[userName, score], function(err, result){
         if(err) console.log(err);
         console.log("userName inserted");
         // table scoreTable 생성
     });
 
-    conn.query('select * from scoreTable ORDER BY userScore', (err, results)=>{
+    conn.query('select * from scoreTable ORDER BY userScore desc', (err, results)=>{
         if(err){
             console.log('db select error '+err);
         }else{

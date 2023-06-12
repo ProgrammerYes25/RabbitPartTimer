@@ -23,11 +23,17 @@
         </table>
         <hr>
         <table>
+            <%i = 0%>
             <% datalist.forEach(function (item, index) { %>
-                <tr>
-                    <td> <%= item.userName %> </td>
-                    <td> <%= item.userScore %> </td>
-                </tr>    
+                <% i++%>
+                
+                <% if(index< 5){ %>
+                    <tr>
+                        <td> <%= item.userName %> </td>
+                        <td> <%= item.userScore %> </td>
+                    </tr>
+                <% }%>
+                   
             <%});%>
         </table>
     </div>
