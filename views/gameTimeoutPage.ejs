@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/gameTimeoutPage.css">
     <!-- <script src="../js/index.js"></script> -->
     <title>알바토끼</title>
     <script>
@@ -17,7 +17,20 @@
     </script>
 </head>
 <body>
-    <img class="img_logo" src="image/img_logo.png" alt="img_logo">
+    <div class=".img_table">
+        <table>
+
+        </table>
+        <hr>
+        <table>
+            <% datalist.forEach(function (item, index) { %>
+                <tr>
+                    <td> <%= item.userName %> </td>
+                    <td> <%= item.userScore %> </td>
+                </tr>    
+            <%});%>
+        </table>
+    </div>
 
     <img class="game_btn" src="image/img_btn_game_start.png" alt="game_btn"
         onclick="onclickSound('/gameNameEnterPage')" />

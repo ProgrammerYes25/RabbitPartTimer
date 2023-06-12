@@ -8,13 +8,13 @@ var express = require('express')
 var static = require('serve-static');
 //var player = require('play-sound')(opts = {})
 
-// const conn = mysql.createConnection({
-//     host: '127.0.0.1',
-//     port: '3306',
-//     user: 'RabbitPartTimer',
-//     password: 'rabbit2023@',
-//     database : 'partTimerDB'
-// });
+const conn = mysql.createConnection({
+    host: '127.0.0.1',
+    port: '3306',
+    user: 'RabbitPartTimer',
+    password: 'rabbit2023@',
+    database : 'partTimerDB'
+});
 
 let app =express();
 // const audio = new Audio('./music/button_click.mp3');
@@ -38,7 +38,7 @@ app.get('/gameManualPage', (req, res)=>{
     console.log('/ gameManualPage');
     res.render('gameManualPage')
 });
-
+let userName;
 app.post('/gamePlayPage', (req, res)=>{
     
     console.log('/ 시작됨');
@@ -49,14 +49,14 @@ app.post('/gamePlayPage', (req, res)=>{
     //     if (err) throw err
     //   })
     
-    // userName = req.body.nameInput;
-    // console.log('userName :'+userName);
-    // conn.query(`INSERT INTO scoreTable(userName, userScore) VALUES (?, null)`,[userName], function(err, result){
-    //     if(err) console.log(err);
-    //     console.log("userName inserted");
-    //     // table scoreTable 생성
-    // });
-    //conn.end();
+    userName = req.body.nameInput;
+    console.log('userName :'+userName);
+    conn.query(`INSERT INTO scoreTable(userName, userScore) VALUES (?, null)`,[userName], function(err, result){
+        if(err) console.log(err);
+        console.log("userName inserted");
+        // table scoreTable 생성
+    });
+    // conn.end();
     res.render('gamePlayPage');
 
     // conn.query('select * from scoreTable', (err, results)=>{
@@ -71,8 +71,23 @@ app.post('/gamePlayPage', (req, res)=>{
 });
 
 app.get('/gameTimeoutPage', (req, res)=>{
-    console.log('/ gameTimeoutPage');
-    res.render('gameTimeoutPage')
+    console.log('/ gameTimeoutPage'+req.query.count+""+userName);
+    let score = req.query.count;
+    conn.query("UPDATE scoreTable SET userScore=? WHERE userName=?",[score, userName], function(err, result){
+        if(err) console.log(err);
+        console.log("userName inserted");
+        // table scoreTable 생성
+    });
+
+    conn.query('select * from scoreTable ORDER BY userScore', (err, results)=>{
+        if(err){
+            console.log('db select error '+err);
+        }else{
+            console.dir(results);
+            res.render('gameTimeoutPage', {datalist: results});
+        }
+    })
+     
 });
 app.get('/gameManualPage', (req, res)=>{
     console.log('gameManualPage');

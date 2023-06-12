@@ -6,9 +6,9 @@ body{
     background-color: rgb(51, 49, 61);
 }
 
-.img_logo {
-    height: 30%;
-    width: 30%;
+.img_table{
+    height: 100px;
+    width: 100px;
     margin: 8% auto auto auto;
     display: block;
 
