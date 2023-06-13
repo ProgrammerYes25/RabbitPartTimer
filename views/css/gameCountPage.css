@@ -1,13 +1,13 @@
 body {
     height: 100%;
     /* width: 100%; */
-    background-image: url("../image/img_game_background.png");
+    background-image: url("../image/img_count_background.png");
     background-size: 100%;
     background-color: rgb(51, 49, 61);
 }
 
 #T {
-    margin-top: 30%;
+    margin-top: 27%;
     margin-left: 47%;
     font-size: 1000%;
     color: black;

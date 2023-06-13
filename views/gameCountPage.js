@@ -1,6 +1,3 @@
-// const TimeCnt = document.getElementById("T"); //ejs에 있는 id와 연결
-
-
 var time = 3; //기준시간 작성
 var sec = ""; //초
 
