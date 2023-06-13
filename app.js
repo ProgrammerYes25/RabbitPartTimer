@@ -38,8 +38,17 @@ app.get('/gameManualPage', (req, res)=>{
     console.log('/ gameManualPage');
     res.render('gameManualPage')
 });
+
 let userName;
-app.post('/gamePlayPage', (req, res)=>{
+app.post('/gameCountPage', (req, res)=>{
+    console.log('/ gameCountPage');
+    userName = req.body.nameInput;
+    res.render('gameCountPage')
+});
+
+
+
+app.get('/gamePlayPage', (req, res)=>{
     
     console.log('/ 시작됨');
     // audio.autoplay = true;
@@ -49,7 +58,7 @@ app.post('/gamePlayPage', (req, res)=>{
     //     if (err) throw err
     //   })
     
-    userName = req.body.nameInput;
+    
     // conn.end();
     res.render('gamePlayPage');
 
