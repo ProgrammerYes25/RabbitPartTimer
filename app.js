@@ -47,7 +47,6 @@ app.post('/gameCountPage', (req, res)=>{
 });
 
 
-
 app.get('/gamePlayPage', (req, res)=>{
     
     console.log('/ 시작됨');
