@@ -5,9 +5,9 @@
 const URL = "/my_model/";
 let model, webcam, ctx, labelContainer, maxPredictions;
 
-// var audio = new Audio('music/Shu.mp3');
-// audio.loop = true;
-// audio.play();
+var audio = new Audio('music/Shu.mp3');
+audio.loop = true;
+audio.play();
 
 async function init() {
     const modelURL = URL + "model.json";
