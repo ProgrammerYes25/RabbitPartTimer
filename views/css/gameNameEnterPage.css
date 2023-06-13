@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body{
     height: 100%;
     /* width: 100%; */
@@ -31,6 +38,7 @@ body{
     margin-left: 2%;
     margin-top: 92%;
     display: block;
+    font-family: 'SBAggroB';
 }
 #submitBtn{
     background:url(/image/img_btn_game_start.png);
