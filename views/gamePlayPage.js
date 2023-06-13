@@ -5,9 +5,9 @@
 const URL = "/my_model/";
 let model, webcam, ctx, labelContainer, maxPredictions;
 
-var audio = new Audio('music/Shu.mp3');
-audio.loop = true;
-audio.play();
+// var audio = new Audio('music/Shu.mp3');
+// audio.loop = true;
+// audio.play();
 
 async function init() {
     const modelURL = URL + "model.json";
@@ -54,22 +54,22 @@ async function predict() {
     // Prediction 2: run input through teachable machine classification model
     const prediction = await model.predict(posenetOutput);
 
-    const basketimageContainer = document.getElementById("basket-image");
+    const basketimageContainer = document.getElementById("basket-image");    
     const imageContainer = document.getElementById("image-container");
     const countTextContainer = document.getElementById("count-text-container"); // YS- ejs에 있는 id가 'count-text-container'인 <h1>태그와 연결 (점수가 들어갈 <h1>태그이다.)
     const randomText = document.getElementById("random-text"); //G : ejs에 있는 id와 연결?
     let basketimageURL;
     let imageURL;
 
-    var RanText = new Array("노동력이! 힘이다! 잠은! 죽어서 자자!",
-        "알바생님 조금만 더!! 조금만 더!!",
-        "궁극의 알바생! 힘내라 알바생!",
-        "좀 더 빨리 빨리 빨리",
-        "시간이 부족하다!!!!!!!!!!",
-        "열심히!!!!! 열심히!!!!!!",
-        "허이챠 허이챠 허이챠 욥욥욥욥욥",
-        "달에 지진나도록 뛰어!!!!!!!!!!!!",
-        "달떡이 맛있어지는 소리가 들립니다!!!!!!!"); //랜덤으로 띄울 텍스트
+     var RanText = new Array("노동력이! 힘이다! 잠은! 죽어서 자자!",
+                            "알바생님 조금만 더!! 조금만 더!!",
+                            "궁극의 알바생! 힘내라 알바생!",
+                            "좀 더 빨리 빨리 빨리",
+                            "시간이 부족하다!!!!!!!!!!",
+                            "열심히!!!!! 열심히!!!!!!",
+                            "허이챠 허이챠 허이챠 욥욥욥욥욥",
+                            "달에 지진나도록 뛰어!!!!!!!!!!!!",
+                            "달떡이 맛있어지는 소리가 들립니다!!!!!!!"); //랜덤으로 띄울 텍스트
 
 
 
@@ -77,51 +77,51 @@ async function predict() {
     if (prediction[0].probability.toFixed(2) == 1) {
         if (status == "sit") {
             count++;//YS- 앉았을 때 점수 추가 
-            countTextContainer.innerHTML = count + "점";    //YS- 점수 바꿔서 띄우기 (innerHTML은 텍스트를 넣거나 들어가 있는 텍스트를 바꿀을 수 있다.)
-            randomText.innerHTML = RanText[Math.floor(Math.random() * 9)]; //점수가 바뀔때마다 텍스트를 랜덤으로 하나씩 넣기
+            countTextContainer.innerHTML=count+"점";    //YS- 점수 바꿔서 띄우기 (innerHTML은 텍스트를 넣거나 들어가 있는 텍스트를 바꿀을 수 있다.)
+            randomText.innerHTML=RanText[Math.floor(Math.random() * 9)]; //점수가 바뀔때마다 텍스트를 랜덤으로 하나씩 넣기
             scoreMusic.play();
         }
         status = "stand";
         imageURL = "./image/img_rabbit1.png";
-    } else if (prediction[1].probability.toFixed(2) == 1) {
+    } else if (prediction[1].probability.toFixed(2) == 1) { 
         status = "sit";
         imageURL = "./image/img_rabbit2.png";
     }
     console.log(count);
 
-    if (count < 5) {
+    if(count < 5){
         basketimageURL = "./image/img_basket.png";
-    } else if (count >= 5 && count < 10) {
+    } else if(count >= 5 && count < 10){
         basketimageURL = "./image/img_basket2.png";
-    } else if (count >= 10 && count < 15) {
+    } else if(count >= 10 && count < 15){
         basketimageURL = "./image/img_basket3.png";
-    } else if (count >= 15 && count < 20) {
+    } else if(count >= 15 && count < 20){
         basketimageURL = "./image/img_basket4.png";
-    } else if (count >= 20 && count < 25) {
+    } else if(count >= 20 && count < 25){
         basketimageURL = "./image/img_basket5.png";
-    } else if (count >= 25) {
+    } else if(count >= 25){
         basketimageURL = "./image/img_basket6.png";
     }
 
-    // 이미지 요소 생성 및 속성 설정
-    const imageElement = new Image();
-    imageElement.src = imageURL;
+   // 이미지 요소 생성 및 속성 설정
+   const imageElement = new Image();
+   imageElement.src = imageURL;
 
-    const basketimageElement = new Image();
-    basketimageElement.src = basketimageURL;
+   const basketimageElement = new Image();
+   basketimageElement.src = basketimageURL; 
 
-    const textElement = new Text();
+   const textElement = new Text();
 
-    // 이미지 로드 완료 후 이미지 컨테이너에 이미지 추가
-    imageElement.onload = function () {
-        imageContainer.innerHTML = ""; // 이미지 컨테이너 초기화
-        imageContainer.appendChild(imageElement);
-    };
+  // 이미지 로드 완료 후 이미지 컨테이너에 이미지 추가
+  imageElement.onload = function() {
+    imageContainer.innerHTML = ""; // 이미지 컨테이너 초기화
+    imageContainer.appendChild(imageElement);
+  };
 
-    basketimageElement.onload = function () {
-        basketimageContainer.innerHTML = ""; // 이미지 컨테이너 초기화
-        basketimageContainer.appendChild(basketimageElement);
-    };
+  basketimageElement.onload = function() {
+    basketimageContainer.innerHTML = ""; // 이미지 컨테이너 초기화
+    basketimageContainer.appendChild(basketimageElement);
+  };
 
     //stand sit 분석 수치 나타내는 코드
     // for (let i = 0; i < maxPredictions; i++) {
@@ -130,31 +130,31 @@ async function predict() {
     //     labelContainer.childNodes[i].innerHTML = classPrediction;
     // }
 
-
+    
     // finally draw the poses
     drawPose(pose);
 }
 
 var time = 30; //기준시간 작성
-var sec = ""; //초
+   var sec = ""; //초
 
-//setInterval(함수, 시간) : 주기적인 실행
-var x = setInterval(function () {
-    //parseInt() : 정수를 반환
-    sec = time % 60; //나머지를 계산
+   //setInterval(함수, 시간) : 주기적인 실행
+   var x = setInterval(function() {
+      //parseInt() : 정수를 반환
+      sec = time%60; //나머지를 계산
 
-    document.getElementById("timer").innerHTML = sec + "초";
-    time--;
+      document.getElementById("timer").innerHTML = sec + "초";
+      time--;
 
-    //타임아웃 시
-    if (time < 0) {
-        clearInterval(x); //setInterval() 실행을 끝냄
-        document.getElementById("timer").innerHTML = "0초";
-        location.href = "/gameTimeoutPage?count=" + count; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<타이머 끝나면 화면 넘어가는 코드
-        //location.href = "/gameTimeoutPage"; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<타이머 끝나면 화면 넘어가는 코드
-        // 겜 화면 수정하느라 주석달아놓음 / 나중에 풀것!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    }
-}, 1000);
+      //타임아웃 시
+      if (time < 0) {
+         clearInterval(x); //setInterval() 실행을 끝냄
+         document.getElementById("timer").innerHTML = "0초";
+         
+            // location.href = "/gameTimeoutPage"; <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<타이머 끝나면 화면 넘어가는 코드
+            // 겜 화면 수정하느라 주석달아놓음 / 나중에 풀것!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      }
+   }, 1000);
 
 
 function drawPose(pose) {
