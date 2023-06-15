@@ -1,9 +1,20 @@
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     height: 100%;
     /* width: 100%; */
     background-image: url("../image/img_game_background.png");
     background-size: 100%;
     background-color: rgb(51, 49, 61);
+}
+
+#random-text{
+    font-family: 'SBAggroB';
 }
 
 #canvas {
@@ -25,11 +36,13 @@ body {
 }
 
 #game-cnt{
+    font-family: 'SBAggroB';
     font-size: large;
     font-style: normal;
 }
 
 #timer{
+    font-family: 'SBAggroB';
     margin-top: 17.5%;
     margin-left: 9.5%;
     color: white;
@@ -41,11 +54,14 @@ body {
 }
 
 #chear-up{
+    font-family: 'SBAggroB';
     margin-top: 10;
 }
 
 #count-text-container{
+    font-family: 'SBAggroB';
     margin-top: 9.5%;
     margin-left: 13.5%;
     color: white;
 }
+
