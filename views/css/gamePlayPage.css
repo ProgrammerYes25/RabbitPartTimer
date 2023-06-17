@@ -13,6 +13,11 @@ body {
     background-color: rgb(51, 49, 61);
 }
 
+#random-text{
+    font-family: 'SBAggroB';
+    margin : 5% auto auto 50%;
+}
+
 #canvas {
     position: absolute;
     margin-left: 75%;
@@ -61,6 +66,3 @@ body {
     color: white;
 }
 
-#random-text{
-    font-family: 'SBAggroB';
-}
