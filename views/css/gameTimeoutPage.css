@@ -7,11 +7,12 @@ body{
 }
 
 .img_table{
-    height: 100px;
-    width: 100px;
-    margin: 8% auto auto auto;
+    height: 700px;
+    width: 1000px;
+    margin: 15% auto auto auto;
     display: block;
-
+    font-family: 'SBAggroB';
+    font-size: 60pt;
 }
 
 .game_btn{
