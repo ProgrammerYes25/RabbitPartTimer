@@ -1,5 +1,6 @@
 var time = 3; //기준시간 작성
 var sec = ""; //초
+const countMp3 = new Audio('./music/count3.mp3');
 
 //setInterval(함수, 시간) : 주기적인 실행
 var x = setInterval(function () {
@@ -8,13 +9,12 @@ var x = setInterval(function () {
 
    document.getElementById("T").innerHTML = sec;
    time--;
-
+   countMp3.play();
    //타임아웃 시
    if (time < 0) {
       clearInterval(x); //setInterval() 실행을 끝냄
       document.getElementById("T").innerHTML = "";
-      // location.href = "/gamePlayPage?count=" + count; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<타이머 끝나면 화면 넘어가는 코드
-      location.href = "/gamePlayPage"; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<타이머 끝나면 화면 넘어가는 코드
-      // 겜 화면 수정하느라 주석달아놓음 / 나중에 풀것!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      location.href = "/gamePlayPage"
+
    }
 }, 1000);
