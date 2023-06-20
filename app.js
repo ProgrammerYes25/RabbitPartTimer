@@ -88,10 +88,9 @@ app.get('/gameTimeoutPage', (req, res)=>{
             console.log('db select error '+err);
         }else{
             console.dir(results);
-            res.render('gameTimeoutPage', {datalist: results});
+            res.render('gameTimeoutPage', {datalist: results, nowCount : req.query.count, nowName : userName});
         }
     })
-     
 });
 app.get('/gameManualPage', (req, res)=>{
     console.log('gameManualPage');

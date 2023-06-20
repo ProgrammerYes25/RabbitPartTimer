@@ -50,6 +50,22 @@ body{
   .rule_btn:hover {
     transform: scale(1.1);
   }
+  .now{
+    width: 1000px;
+    border-collapse: separate;
+    border-spacing: 30px 0px;
+    margin-left: 30px;
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+  .score{
+    height: 500px;
+    width: 1000px;
+    border-collapse: separate;
+    border-spacing: 40px 0px;
+    margin-left: 60px;
+    padding: 8px;
+  }
   
   @font-face {
     font-family: 'SBAggroB';

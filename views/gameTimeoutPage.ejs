@@ -18,17 +18,21 @@
 </head>
 <body>
     <div class="img_table">
-        <table>
-
+        <table class="now">
+            <tr >
+                <td></td>
+                <td> <%= nowName %> </td>
+                <td> <%= nowCount %> </td>
+            </tr>
         </table>
         <hr>
-        <table>
+        <table class="score">
             <%i = 0%>
             <% datalist.forEach(function (item, index) { %>
                 <% i++%>
                 
                 <% if(index< 5){ %>
-                    <tr>
+                    <tr >
                         <td><%= i%></td>
                         <td> <%= item.userName %> </td>
                         <td> <%= item.userScore %> </td>
