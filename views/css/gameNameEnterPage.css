@@ -23,7 +23,7 @@ body{
   font-weight : bold ;
   text-align:center;
   margin-left: -20%;
-  margin-top: 130%;
+  margin-top: 145%;
   display: block;
   font-family: 'SBAggroB';
 }
@@ -51,7 +51,7 @@ body{
     background-size: 350px 120px;
     border: 0;
     margin-left: 20%;
-    margin-top: 15%;
+    margin-top: 13%;
 }
 
 #back_btn{

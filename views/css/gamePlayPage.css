@@ -14,8 +14,10 @@ body {
 }
 
 #random-text{
+    color: white;
+    font-size: 60px;
     font-family: 'SBAggroB';
-    margin : 5% auto auto 50%;
+    margin : 7% auto auto 50%;
 }
 
 #canvas {
@@ -42,12 +44,12 @@ body {
     font-style: normal;
 }
 
-#timer{
+#timer {
     font-family: 'SBAggroB';
-    margin-top: 17.5%;
-    margin-left: 9.5%;
+    margin-top: 37.8%;
+    margin-left: 10%;
     color: white;
-    font-size: 35px;
+    font-size: 40px;
 }
 
 #image-container{
@@ -59,10 +61,11 @@ body {
     margin-top: 10;
 }
 
-#count-text-container{
+#count-text-container {
     font-family: 'SBAggroB';
-    margin-top: 9.5%;
-    margin-left: 13.5%;
+    font-size: 50px;
+    margin-left: 10%;
+    margin-top: -17%;
     color: white;
 }
 
