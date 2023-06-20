@@ -17,25 +17,25 @@ body {
     color: white;
     font-size: 60px;
     font-family: 'SBAggroB';
-    margin : 7% auto auto 50%;
+    margin : 7% auto auto 42%;
 }
 
 #canvas {
     position: absolute;
-    margin-left: 75%;
-    margin-top: 19%;
+    margin-left: 75.5%;
+    margin-top: 24%;
 }
 
 #basket-image{
     width: 200px;
     height: 200px;
-    margin-left: 80px;
-    margin-top: -24%;
+    margin-left: 90px;
+    margin-top: -14%;
 }
 
 #image-container{
-    margin-left: 25%;
-    margin-top: 10%;
+    margin-left: 30%;
+    margin-top: 0%;
 }
 
 #game-cnt{
@@ -44,28 +44,23 @@ body {
     font-style: normal;
 }
 
-#timer {
+#count-text-container {
     font-family: 'SBAggroB';
-    margin-top: 37.8%;
-    margin-left: 10%;
-    color: white;
     font-size: 40px;
+    margin-left: 10%;
+    margin-top: 7.5%;
+    color: white;
 }
 
-#image-container{
-    margin-top: -5%;
+#timer {
+    font-family: 'SBAggroB';
+    margin-top: 6.5%;
+    margin-left: 9%;
+    color: white;
+    font-size: 50px;
 }
 
 #chear-up{
     font-family: 'SBAggroB';
     margin-top: 10;
 }
-
-#count-text-container {
-    font-family: 'SBAggroB';
-    font-size: 50px;
-    margin-left: 10%;
-    margin-top: -17%;
-    color: white;
-}
-
